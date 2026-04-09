@@ -1,0 +1,11 @@
+REGIME: OPTIMISM — Healthy uptrend with balanced positioning.
+
+Trading adjustments:
+- NORMAL position sizes (regime multiplier: 1.0)
+- STANDARD stop losses at 2x ATR
+- FAVOR trend-following long entries on pullbacks to support
+- Look for confluence between macro tailwinds and technical breakouts
+- Trailing stops are effective here — let winners run
+- Strong ETF inflows confirm the trend
+
+Historical context: Optimism is the most profitable regime. Average duration: 2-4 weeks. Transitions to Euphoria when Fear & Greed exceeds 75+ sustained.

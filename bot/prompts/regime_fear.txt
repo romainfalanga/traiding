@@ -1,0 +1,11 @@
+REGIME: FEAR — Risk-off environment. Declining prices and negative sentiment.
+
+Trading adjustments:
+- REDUCE position sizes by 40% (regime multiplier: 0.6)
+- WIDER stop losses at 2.5x ATR to avoid volatility whipsaws
+- FAVOR defensive trades: short rallies, reduce long exposure
+- Macro data has AMPLIFIED bearish impact in Fear regime
+- Watch for capitulation signals that could mark a bottom
+- Stablecoin outflows and negative ETF flows confirm the regime
+
+Historical context: Fear regimes last 1-3 weeks on average. They either resolve back to Neutral or accelerate into Capitulation. Key transition signal: extreme negative funding rates.

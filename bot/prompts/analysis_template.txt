@@ -1,0 +1,95 @@
+=== MACRO PULSE — ANALYSE IA MULTI-AGENT ===
+Date: {timestamp}
+Régime actuel: {regime} (confiance: {regime_confidence}%)
+
+=== ÉVÉNEMENT MACRO ===
+Événement: {event_name} ({country})
+Impact: {impact}/3 | Priorité: {priority}
+Actual: {actual} | Forecast: {forecast} | Previous: {previous}
+Surprise Score: {surprise_score}
+Revision-Adjusted Surprise: {revision_adjusted}
+Cumulative Surprise Momentum: {cumulative_momentum}
+
+=== DONNÉES MARCHÉ ===
+{symbol}: {price} USD | Volume 24h: {volume_24h}
+Variation 24h: {change_24h}%
+Funding Rate: {funding_rate}% | Open Interest: {open_interest}
+Long/Short Ratio: {long_short_ratio}
+Fear & Greed Index: {fear_greed} ({fear_greed_label})
+
+=== ANALYSE TECHNIQUE ({timeframe}) ===
+RSI(14): {rsi} | Divergence: {rsi_divergence}
+MACD: {macd_signal} | Histogram: {macd_histogram}
+SMA20: {sma_20} | SMA50: {sma_50} | SMA200: {sma_200}
+EMA12: {ema_12} | EMA26: {ema_26}
+ATR(14): {atr}
+Bollinger: [{bollinger_lower}, {bollinger_upper}] | Squeeze: {keltner_squeeze}
+OBV Trend: {obv} | VWAP: {vwap} | CVD: {cvd}
+Pivot: {pivot_point} | S1: {support_1} | R1: {resistance_1}
+Trend Strength: {trend_strength}/100
+Momentum Exhaustion: {momentum_exhaustion}
+Volatility Regime: {volatility_regime}
+MTF Confluence: {mtf_confluence}/5
+
+=== CONTEXTE FINANCIER TRADITIONNEL ===
+DXY: {dxy_price} | Var 24h: {dxy_change_24h}%
+VIX: {vix_value} (percentile 90j: {vix_percentile_90d})
+S&P 500: {sp500_price} | Var 24h: {sp500_change_24h}%
+US 10Y Yield: {us10y_yield}% | Var 24h: {us10y_change_24h}
+Gold: {gold_price} | Var 24h: {gold_change_24h}%
+Corrélation BTC-SPX 30j: {btc_spx_correlation_30d}
+Macro Risk Score: {macro_risk_score}/100
+
+=== DEFI & STABLECOINS ===
+TVL totale DeFi: ${total_tvl} | Var 7j: {tvl_change_7d_pct}%
+Supply stablecoins: ${stablecoin_total_supply} | Var 7j: {stablecoin_supply_change_7d}%
+Taux de mint/burn stablecoins: {stablecoin_mint_rate}
+DEX/CEX Volume ratio: {dex_cex_ratio}
+Liquidity Pulse Score: {liquidity_pulse_score}/100
+
+=== OPTIONS & VOLATILITÉ IMPLICITE ===
+BTC DVOL: {btc_dvol} (percentile 90j: {dvol_percentile_90d})
+ETH DVOL: {eth_dvol}
+BTC Max Pain (expiry {next_expiry_date}): ${btc_max_pain} ({btc_max_pain_distance_pct}% du prix)
+Put/Call Ratio BTC: {btc_put_call_ratio} | ETH: {eth_put_call_ratio}
+Structure de volatilité: {vol_term_structure}
+
+=== MARKET BREADTH ===
+% top cryptos > SMA50: {market_breadth_above_sma50_pct}%
+% top cryptos > SMA200: {market_breadth_above_sma200_pct}%
+
+=== ETF BITCOIN FLOWS ===
+Flux net du jour: {etf_net_flow_usd}M USD
+Détail: {etf_flow_summary}
+
+=== NIVEAUX DE LIQUIDATION ESTIMÉS ===
+BTC Long liquidations: {liq_long_10x} (10x) / {liq_long_25x} (25x)
+BTC Short liquidations: {liq_short_10x} (10x) / {liq_short_25x} (25x)
+
+=== SENTIMENT ===
+Score: {sentiment_score} | Label: {sentiment_label}
+Divergence Sentiment/Prix: {sentiment_divergence_score}
+Résumé: {sentiment_summary}
+
+=== WHALE ACTIVITY ===
+Whale Flow Index: {whale_flow_index}
+Net Flow: ${whale_net_flow_usd} | Inflow: ${whale_inflow_usd} | Outflow: ${whale_outflow_usd}
+Mouvements significatifs: {significant_movements}
+
+=== INSTRUCTIONS ===
+Analyse ces données et retourne un JSON:
+{{
+  "market_impact": "bullish" | "bearish" | "neutral",
+  "confidence": 0.0 à 1.0,
+  "reasoning": "ton analyse détaillée",
+  "trades": [
+    {{
+      "symbol": "BTC/USDT",
+      "direction": "long" | "short",
+      "entry_zone": [prix_bas, prix_haut],
+      "stop_loss": prix,
+      "take_profit": prix,
+      "size_pct": 1 à 5
+    }}
+  ]
+}}

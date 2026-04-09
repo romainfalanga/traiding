@@ -1,0 +1,26 @@
+=== SYNTHÈSE MULTI-AGENT ===
+
+Combine ces 3 analyses indépendantes en un résumé cohérent:
+
+AGENT 1 — Le Quant ({agent_1_model}):
+Impact: {agent_1_impact} | Confiance: {agent_1_confidence}
+Analyse: {agent_1_response}
+
+AGENT 2 — Le Macro Stratégiste ({agent_2_model}):
+Impact: {agent_2_impact} | Confiance: {agent_2_confidence}
+Analyse: {agent_2_response}
+
+AGENT 3 — Le Contrarian ({agent_3_model}):
+Impact: {agent_3_impact} | Confiance: {agent_3_confidence}
+Analyse: {agent_3_response}
+Risque contrariant: {agent_3_contrarian_risk}
+
+RÉSULTAT DU VOTE: {vote_result}
+Direction consensus: {consensus_direction}
+Confiance moyenne: {consensus_confidence_avg}
+
+Fournis un résumé en 3-5 phrases qui:
+1. Explique la décision finale et pourquoi
+2. Mentionne les points d'accord entre agents
+3. Mentionne les points de désaccord importants
+4. Identifie le risque principal

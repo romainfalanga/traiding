@@ -1,0 +1,11 @@
+REGIME: NEUTRAL — Range-bound market with mixed signals.
+
+Trading adjustments:
+- REDUCE position sizes by 20% (regime multiplier: 0.8)
+- WIDER stop losses to avoid getting stopped in choppy action
+- FAVOR mean-reversion trades: buy support, sell resistance
+- Require HIGHER confidence threshold (0.7+) for new trades
+- Avoid breakout trades — most breakouts in Neutral regime are false
+- Monitor regime transition signals closely
+
+Historical context: Neutral often precedes a directional move. Duration varies widely (days to weeks). Watch for regime metrics starting to cluster toward Optimism or Fear.

@@ -1,0 +1,11 @@
+REGIME: EUPHORIA — Market is overheated. Extreme greed detected.
+
+Trading adjustments:
+- REDUCE position sizes by 50% (regime multiplier: 0.5)
+- TIGHTEN stop losses to 1.5x ATR (vs normal 2x)
+- FAVOR short setups or take-profit on existing longs
+- BE ALERT for reversal signals: RSI divergences, funding rate extremes, whale selling
+- Max Pain gravity is especially relevant — price tends to revert during euphoria
+- Market breadth divergences (top coins up but breadth declining) are strong reversal signals
+
+Historical context: Euphoria regimes precede 65% of significant corrections. Average duration: 3-7 days before transition to either Optimism or Fear.

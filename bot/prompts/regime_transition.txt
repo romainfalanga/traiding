@@ -1,0 +1,10 @@
+SPECIAL CASE: REGIME TRANSITION IN PROGRESS
+
+The market is transitioning between regimes. During transitions:
+- Use the MORE CONSERVATIVE of the two regime multipliers
+- Require HIGHER confidence for new trades (add 0.1 to threshold)
+- Monitor transition score: >0.7 means transition is nearly complete
+- Avoid large positions until the new regime is confirmed
+- Transition periods often have increased volatility — widen stops
+
+Transition typically completes within 4-24 hours.

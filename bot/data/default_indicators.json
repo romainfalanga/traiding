@@ -1,0 +1,24 @@
+{
+  "priority_indicators": [
+    {"name": "CPI", "category": "inflation", "typical_impact": "high", "crypto_correlation": "inverse"},
+    {"name": "Non-Farm Payrolls", "category": "employment", "typical_impact": "high", "crypto_correlation": "complex"},
+    {"name": "Fed Interest Rate Decision", "category": "rates", "typical_impact": "critical", "crypto_correlation": "inverse"},
+    {"name": "ECB Interest Rate Decision", "category": "rates", "typical_impact": "high", "crypto_correlation": "indirect"},
+    {"name": "BOJ Interest Rate Decision", "category": "rates", "typical_impact": "medium", "crypto_correlation": "indirect"},
+    {"name": "PBOC LPR", "category": "rates", "typical_impact": "medium", "crypto_correlation": "indirect"},
+    {"name": "PMI Manufacturing", "category": "activity", "typical_impact": "medium", "crypto_correlation": "positive"},
+    {"name": "GDP", "category": "growth", "typical_impact": "high", "crypto_correlation": "positive"},
+    {"name": "Initial Jobless Claims", "category": "employment", "typical_impact": "medium", "crypto_correlation": "inverse"},
+    {"name": "PPI", "category": "inflation", "typical_impact": "medium", "crypto_correlation": "inverse"},
+    {"name": "PCE Price Index", "category": "inflation", "typical_impact": "high", "crypto_correlation": "inverse"},
+    {"name": "Michigan Consumer Sentiment", "category": "sentiment", "typical_impact": "medium", "crypto_correlation": "positive"},
+    {"name": "China Trade Balance", "category": "trade", "typical_impact": "medium", "crypto_correlation": "positive"}
+  ],
+  "regime_defaults": {
+    "EUPHORIA": {"multiplier": 0.5, "atr_factor": 1.5, "min_confidence": 0.7},
+    "OPTIMISM": {"multiplier": 1.0, "atr_factor": 2.0, "min_confidence": 0.6},
+    "NEUTRAL": {"multiplier": 0.8, "atr_factor": 2.0, "min_confidence": 0.65},
+    "FEAR": {"multiplier": 0.6, "atr_factor": 2.5, "min_confidence": 0.65},
+    "CAPITULATION": {"multiplier": 0.3, "atr_factor": 3.0, "min_confidence": 0.75}
+  }
+}

@@ -1,0 +1,11 @@
+REGIME: CAPITULATION — Panic selling. Potential bottom formation.
+
+Trading adjustments:
+- MINIMAL position sizes (regime multiplier: 0.3)
+- VERY WIDE stop losses at 3x ATR
+- DO NOT try to catch falling knives immediately
+- WAIT for confirmation signals: positive funding rate flip, whale accumulation, RSI divergence
+- When entry signals appear, they can be highly profitable (buying capitulation bottoms)
+- Only enter with UNANIMOUS agent consensus (3/3)
+
+Historical context: Capitulation is rare (occurs 2-3 times per year) but creates the best long entry opportunities. Average duration: 2-5 days. Key reversal signals: funding rate goes extreme negative then flips, volume spike with price stabilization.

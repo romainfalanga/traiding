@@ -1,0 +1,28 @@
+=== POST-TRADE ANALYSIS ===
+
+Analyse ce trade complété et identifie les leçons:
+
+Trade: {symbol} {direction}
+Entrée: {entry_price} à {entry_time}
+Sortie: {exit_price} à {exit_time}
+PnL: {pnl} USDT ({pnl_pct}%)
+Stop Loss: {stop_loss} | Take Profit: {take_profit}
+Raison de clôture: {close_reason}
+Événement déclencheur: {event_name}
+Régime au moment de l'entrée: {regime}
+Consensus des agents: {agent_consensus}
+
+Questions:
+1. Qu'est-ce qui a fonctionné dans cette analyse?
+2. Qu'est-ce qui n'a pas fonctionné?
+3. Avec les mêmes données d'entrée, qu'aurais-tu fait différemment?
+4. Identifies-tu un pattern d'erreur récurrent?
+
+Réponds en JSON:
+{{
+  "what_worked": "...",
+  "what_failed": "...",
+  "alternative_action": "...",
+  "recurring_pattern": "...",
+  "suggested_adjustments": {{"param": "value"}}
+}}
