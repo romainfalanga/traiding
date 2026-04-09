@@ -1,10 +1,30 @@
 import { createBrowserClient } from "@supabase/ssr";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { RealtimeChannel } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 
-export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+let _supabase: SupabaseClient | null = null;
+
+export function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error(
+        "Supabase URL and Anon Key must be set in environment variables"
+      );
+    }
+    _supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+  }
+  return _supabase;
+}
+
+// Backward-compatible export — lazy getter so import doesn't crash at build time
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(_target, prop) {
+    return (getSupabase() as any)[prop];
+  },
+});
 
 export type RealtimeCallback<T> = (payload: {
   eventType: "INSERT" | "UPDATE" | "DELETE";
@@ -21,7 +41,7 @@ export function subscribeToTable<T extends object>(
   callback: RealtimeCallback<T>,
   filter?: string
 ): RealtimeChannel {
-  let channel = supabase
+  let channel = getSupabase()
     .channel(`realtime:${table}`)
     .on<T>(
       "postgres_changes" as any,
@@ -48,5 +68,5 @@ export function subscribeToTable<T extends object>(
  * Unsubscribe from a realtime channel.
  */
 export function unsubscribe(channel: RealtimeChannel): void {
-  supabase.removeChannel(channel);
+  getSupabase().removeChannel(channel);
 }
