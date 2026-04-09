@@ -416,6 +416,8 @@ class MacroPulseBot:
     # ──────────────────── Loop 4: Whale Monitoring ────────────────
 
     async def loop_4_whale_monitoring(self):
+        if not config.WHALE_ALERT_API_KEY:
+            return  # Skip if no API key configured
         try:
             data = self.whale.fetch_all()
             if not data:
