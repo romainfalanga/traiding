@@ -109,7 +109,7 @@ export default function SuggestedAdjustments({
   }, [analyses]);
 
   const handleApply = (id: string) => {
-    setAppliedIds((prev) => new Set([...prev, id]));
+    setAppliedIds((prev) => new Set(Array.from(prev).concat(id)));
   };
 
   const impactColor: Record<string, { text: string; bg: string }> = {

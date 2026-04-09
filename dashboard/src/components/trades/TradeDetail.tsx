@@ -24,7 +24,7 @@ export default function TradeDetail({ trade }: TradeDetailProps) {
   useEffect(() => {
     async function fetchDetails() {
       try {
-        const promises: Promise<any>[] = [];
+        const promises: PromiseLike<any>[] = [];
 
         if (trade.decision_id) {
           promises.push(
@@ -33,6 +33,7 @@ export default function TradeDetail({ trade }: TradeDetailProps) {
               .select("*")
               .eq("id", trade.decision_id)
               .single()
+              .then((res) => res)
           );
         } else {
           promises.push(Promise.resolve({ data: null, error: null }));
@@ -45,6 +46,7 @@ export default function TradeDetail({ trade }: TradeDetailProps) {
             .eq("trade_id", trade.id)
             .limit(1)
             .single()
+            .then((res) => res)
         );
 
         const [decisionRes, analysisRes] = await Promise.all(promises);

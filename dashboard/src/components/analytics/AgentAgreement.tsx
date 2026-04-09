@@ -41,7 +41,7 @@ export default function AgentAgreement({
       const time = new Date(d.timestamp).getTime();
       let assigned = false;
 
-      for (const [key, group] of rounds) {
+      for (const [key, group] of Array.from(rounds.entries())) {
         const groupTime = new Date(key).getTime();
         if (Math.abs(time - groupTime) < 5 * 60 * 1000) {
           group.push(d);
@@ -67,7 +67,7 @@ export default function AgentAgreement({
       "No Consensus": { wins: 0, total: 0 },
     };
 
-    for (const [, group] of rounds) {
+    for (const [, group] of Array.from(rounds.entries())) {
       if (group.length < 2) continue;
 
       const directions = group.map((d) => d.direction);

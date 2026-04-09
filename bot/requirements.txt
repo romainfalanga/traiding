@@ -7,7 +7,7 @@ aiohttp==3.10.10
 supabase==2.9.1
 pandas==2.2.3
 numpy==1.26.4
-pandas-ta==0.3.14b1
+# pandas-ta removed — technical_engine.py uses manual calculations
 yfinance==0.2.48
 hmmlearn==0.3.2
 scikit-learn==1.5.2

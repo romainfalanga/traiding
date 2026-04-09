@@ -70,7 +70,7 @@ class MacroPulseBot:
         logger.info("Starting Macro Pulse Bot...")
 
         await self.paper_trader.initialize()
-        logger.info("Portfolio initialized: $%.2f", self.paper_trader.balance)
+        logger.info("Portfolio initialized: $%.2f", self.paper_trader.portfolio["balance"])
 
         await asyncio.gather(
             self._loop_wrapper("Hourly", self.loop_1_hourly, 3600),
@@ -326,7 +326,7 @@ class MacroPulseBot:
                 "size_pct": size_pct,
                 "confidence": vote.get("consensus_calibrated_avg", 0.5),
             },
-            balance=self.paper_trader.balance,
+            balance=self.paper_trader.portfolio["balance"],
             open_positions=open_trades,
             recent_trades=recent_trades,
             regime=regime,
@@ -341,7 +341,7 @@ class MacroPulseBot:
         stop_loss = adjusted.get("stop_loss", self.risk_engine.calculate_stop_loss(price, atr, direction, regime))
         take_profit = adjusted.get("take_profit", self.risk_engine.calculate_take_profit(price, stop_loss, direction))
         position_size = adjusted.get("position_size", self.risk_engine.calculate_position_size(
-            self.paper_trader.balance, vote.get("consensus_calibrated_avg", 0.5), atr, price, regime
+            self.paper_trader.portfolio["balance"], vote.get("consensus_calibrated_avg", 0.5), atr, price, regime
         ))
 
         quantity = position_size / price if price > 0 else 0

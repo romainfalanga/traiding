@@ -16,7 +16,7 @@ export type RealtimeCallback<T> = (payload: {
  * Subscribe to realtime changes on a Supabase table.
  * Returns the channel so callers can unsubscribe when done.
  */
-export function subscribeToTable<T extends Record<string, unknown>>(
+export function subscribeToTable<T extends object>(
   table: string,
   callback: RealtimeCallback<T>,
   filter?: string
